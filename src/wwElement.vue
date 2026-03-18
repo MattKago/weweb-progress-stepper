@@ -76,8 +76,11 @@ export default {
 
     const cssVariables = computed(() => ({
       '--title-color': props.content?.titleColor || '#333333',
+      '--title-size': props.content?.titleFontSize || '15px',
       '--subtitle-color': props.content?.subtitleColor || '#9ca3af',
+      '--subtitle-size': props.content?.subtitleFontSize || '11px',
       '--review-subtitle-color': props.content?.activeReviewSubtitleColor || '#d97706',
+      '--icon-size': props.content?.iconSize || '40px',
       '--completed-color': props.content?.completedColor || '#22c55e',
       '--review-color': props.content?.reviewColor || '#f59e0b',
       '--pending-color': props.content?.pendingColor || '#e5e7eb',
@@ -147,15 +150,15 @@ export default {
     align-items: center;
     width: 100%;
     position: relative;
-    height: 40px;
+    height: var(--icon-size);
     margin-bottom: 12px;
   }
   
   .step-line {
     position: absolute;
     top: 50%;
-    left: 48px;
-    width: calc(100% - 56px);
+    left: calc(var(--icon-size) + 8px);
+    width: calc(100% - var(--icon-size) - 16px);
     height: 4px;
     border-radius: 2px;
     transform: translateY(-50%);
@@ -172,8 +175,8 @@ export default {
   }
   
   .step-icon {
-    width: 40px;
-    height: 40px;
+    width: var(--icon-size);
+    height: var(--icon-size);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -214,7 +217,7 @@ export default {
   }
   
   .step-title {
-    font-size: 15px;
+    font-size: var(--title-size);
     font-weight: 700;
     color: var(--title-color);
     margin-bottom: 0px;
@@ -222,7 +225,7 @@ export default {
   }
   
   .step-subtitle {
-    font-size: 11px;
+    font-size: var(--subtitle-size);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -260,18 +263,18 @@ export default {
       }
     }
     .step-indicator {
-      width: 40px;
+      width: var(--icon-size);
       height: auto;
-      min-height: 40px;
+      min-height: var(--icon-size);
       margin-bottom: 0;
       margin-right: 16px;
       flex-direction: column;
     }
     .step-line {
       left: 50%;
-      top: 48px;
+      top: calc(var(--icon-size) + 8px);
       width: 4px;
-      height: calc(100% - 32px);
+      height: calc(100% - var(--icon-size) + 8px);
       transform: translateX(-50%);
     }
     .step-text {

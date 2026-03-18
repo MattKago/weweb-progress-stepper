@@ -108,8 +108,11 @@ export default {
 
     // UI Configuration
     titleColor: { label: { en: 'Title Color' }, type: 'Color', section: 'style', defaultValue: '#333333', bindable: true },
+    titleFontSize: { label: { en: 'Title Size' }, type: 'Length', section: 'style', defaultValue: '15px', bindable: true },
     subtitleColor: { label: { en: 'Subtitle Color' }, type: 'Color', section: 'style', defaultValue: '#9ca3af', bindable: true },
+    subtitleFontSize: { label: { en: 'Subtitle Size' }, type: 'Length', section: 'style', defaultValue: '11px', bindable: true },
     activeReviewSubtitleColor: { label: { en: 'Review Subtitle Color' }, type: 'Color', section: 'style', defaultValue: '#d97706', bindable: true },
+    iconSize: { label: { en: 'Icon Size' }, type: 'Length', section: 'style', defaultValue: '40px', bindable: true },
 
     // Status Colors
     completedColor: { label: { en: 'Completed Color' }, type: 'Color', section: 'style', defaultValue: '#22c55e', bindable: true },
